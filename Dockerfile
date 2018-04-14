@@ -8,4 +8,4 @@ COPY Cargo.toml api.sh ./
 COPY src ./src
 COPY migrations ./migrations
 
-RUN cargo build --release
+ENTRYPOINT ["./api.sh"]

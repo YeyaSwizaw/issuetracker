@@ -1,0 +1,12 @@
+version: '3.1'
+services:
+  db:
+    restart: always
+    env_file:
+      - .env
+
+  api:
+    restart: always
+    command: "--release"
+    env_file:
+      - .env
