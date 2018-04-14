@@ -1,0 +1,18 @@
+version: '3.1'
+services:
+  db:
+    container_name: issuetracker-db
+    image: postgres
+    restart: always
+    env_file:
+      - .env
+
+  api:
+    container_name: issuetracker-api
+    build: .
+    restart: always
+    command: "./api.sh"
+    depends_on:
+      - db
+    env_file:
+      - .env
