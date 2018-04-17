@@ -7,6 +7,6 @@ services:
 
   api:
     restart: always
-    command: "--release"
+    command: --release
     env_file:
       - .env
